@@ -1,0 +1,78 @@
+.xs {
+  width: var(--static-space-12);
+  height: var(--static-space-20);
+  min-width: var(--static-space-12);
+  min-height: var(--static-space-20);
+}
+
+.s {
+  width: var(--static-space-16);
+  height: var(--static-space-24);
+  min-width: var(--static-space-16);
+  min-height: var(--static-space-24);
+}
+
+.m {
+  width: var(--static-space-16);
+  height: var(--static-space-32);
+  min-width: var(--static-space-16);
+  min-height: var(--static-space-32);
+}
+
+.l {
+  width: var(--static-space-20);
+  height: var(--static-space-48);
+  min-width: var(--static-space-20);
+  min-height: var(--static-space-48);
+}
+
+.xl {
+  width: 9.156rem;
+  height: 14rem;
+  min-width: 9.156rem;
+  min-height: 14rem;
+
+  .position {
+    bottom: var(--static-space-16);
+    right: var(--static-space-16);
+  }
+}
+
+.value {
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+}
+
+.indicator {
+  box-sizing: content-box;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateX(var(--static-space-2)) translateY(var(--static-space-2));
+}
+
+.image {
+  object-position: center;
+}
+
+.frame {
+  object-position: center;
+}
+
+.text {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.upload {
+  background: var(--backdrop);
+  backdrop-filter: blur(1rem) grayscale(1);
+
+  .text {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+}

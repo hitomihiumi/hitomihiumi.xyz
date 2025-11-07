@@ -1,0 +1,15 @@
+@import '@/styles/breakpoints';
+
+.white {
+  color: var(--static-white);
+}
+
+.contentFlex {
+  gap: var(--static-space-24);
+}
+
+@include s {
+  .contentFlex {
+    gap: var(--static-space-4);
+  }
+}

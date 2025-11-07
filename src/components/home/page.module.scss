@@ -1,0 +1,47 @@
+@import '@/styles/breakpoints';
+
+.avatarPosition {
+  position: sticky;
+  top: var(--static-space-48);
+  padding-bottom: var(--responsive-space-l);
+}
+
+.infoPosition {
+  position: relative;
+}
+
+.textAlign {
+  text-align: start;
+}
+
+.presencePosition {
+  position: relative;
+}
+
+@include s {
+  .avatarPosition {
+    top: auto;
+    position: relative;
+    padding-bottom: var(--responsive-space-m);
+  }
+
+  .infoPosition {
+    top: auto;
+    position: relative;
+  }
+
+  .presencePosition {
+    top: auto;
+    position: relative;
+    padding-top: var(--responsive-space-l);
+  }
+
+  .textAlign {
+    text-align: center;
+  }
+
+  .about {
+    padding-left: var(--responsive-space-l);
+    padding-right: var(--responsive-space-l);
+  }
+}

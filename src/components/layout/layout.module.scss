@@ -1,0 +1,14 @@
+@import '@/styles/breakpoints';
+
+.themeSwitcher {
+    position: fixed;
+    bottom: var(--static-space-32);
+}
+
+@include s {
+    .themeSwitcher {
+        position: fixed;
+        top: var(--static-space-24);
+        bottom: auto;
+    }
+}

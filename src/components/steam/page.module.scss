@@ -1,0 +1,29 @@
+@import '@/styles/breakpoints';
+
+.white {
+  color: var(--static-white);
+}
+
+.baseColumn {
+  position: relative;
+}
+
+.contentFlex {
+  gap: var(--static-space-24);
+}
+
+.steamProfile {
+  width: 100%;
+  min-width: 24rem;
+  max-width: var(--responsive-width-xs);
+}
+
+@include s {
+  .baseColumn {
+    position: relative;
+  }
+
+  .contentFlex {
+    gap: var(--static-space-4);
+  }
+}

@@ -1,0 +1,17 @@
+@import '@/styles/breakpoints';
+
+.base {
+  max-width: var(--static-width-400);
+  min-width: var(--static-width-320);
+  gap: var(--responsive-space-s);
+  overflow: hidden;
+}
+
+@include s {
+  .base {
+    max-width: var(--static-width-400);
+    min-width: var(--static-width-320);
+    gap: var(--responsive-space-s);
+    overflow: hidden;
+  }
+}
