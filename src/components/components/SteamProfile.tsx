@@ -68,7 +68,7 @@ const SteamProfile = forwardRef<
                   {profileData?.locstatecode && (
                     <Flex fillWidth fillHeight gap={"8"}>
                       <Media
-                        src={`/country/${profileData.loccountrycode?.toLowerCase()}.svg`}
+                        src={`https://community.fastly.steamstatic.com/public/images/countryflags/${profileData.loccountrycode?.toLowerCase()}.gif`}
                         fill
                         maxWidth={"24"}
                         maxHeight={"24"}
@@ -77,6 +77,7 @@ const SteamProfile = forwardRef<
                         radius={"full"}
                         alt={profileData.loccountrycode}
                         sizes={"20px"}
+                        pointerEvents={'none'}
                       />
                       <Text variant={"body-strong-l"} className={styles.white}>
                         {profileData ? profileData.loccountrycode : ""}

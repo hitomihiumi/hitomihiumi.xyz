@@ -1,26 +1,27 @@
 "use client";
 
 import {
-  Heading,
-  Text,
-  Button,
-  Column,
-  Badge,
-  Logo,
-  Line,
-  LetterFx,
-  Flex,
-  RevealFx,
+    Heading,
+    Text,
+    Button,
+    Column,
+    Badge,
+    Logo,
+    Line,
+    LetterFx,
+    Flex,
+    RevealFx, Carousel, SmartLink, DropdownWrapper
 } from "@once-ui-system/core";
 import React, { useEffect } from "react";
-import { Presence, User } from "@/types/types";
-import { AvatarWFrame, ButtonMenu } from "@/components";
+import { Presence as IPresence, User } from "@/types/types";
+import { AvatarWFrame, Presence } from "@/components";
 
 import styles from "@/components/home/page.module.scss";
 
 export default function Home() {
   const [data, setData] = React.useState<User>();
-  const [presence, setPresence] = React.useState<Presence>();
+  const [presence, setPresence] = React.useState<IPresence>();
+    const [isOpen, setIsOpen] = React.useState(false);
 
   useEffect(() => {
     const cacheKey = "user-991777093312585808";
@@ -59,7 +60,7 @@ export default function Home() {
     }
 
     fetch("https://api.hitomihiumi.xyz/v1/users/991777093312585808?content=presence")
-      .then((res) => res.json() as Promise<Presence>)
+      .then((res) => res.json() as Promise<IPresence>)
       .then((res) => {
         let data = res;
         setPresence(data);
@@ -77,7 +78,7 @@ export default function Home() {
       horizontal={"center"}
       vertical={"center"}
     >
-      <Flex horizontal={"center"}>
+      <Flex horizontal={"center"} direction={'column'} gap={'s'}>
         <RevealFx delay={0.2} translateY={0.5} direction="row" s={{ direction: "column" }}>
           <Flex
             className={styles.avatarPosition}
@@ -97,35 +98,15 @@ export default function Home() {
               radius={"full"}
             />
             <Flex direction={"column"} horizontal={"center"}>
-              <ButtonMenu
-                prefixIcon={"clipboard"}
-                label={"Utils"}
-                size={"s"}
-                dropdown={
-                  <>
-                    <Flex direction={"column"} gap={"2"} padding={"4"} horizontal={"between"}>
-                      <Button
-                        fillWidth
-                        label={"Find avatar?"}
-                        prefixIcon={"search"}
-                        href={"https://lens.google.com/uploadbyurl?url=" + data?.avatarURL}
-                        variant={"tertiary"}
-                        size={"s"}
-                        target={"_blank"}
-                      />
-                      <Line vert={false} background={"neutral-alpha-medium"} />
-                      <Button
-                        fillWidth
-                        label={"Meow"}
-                        prefixIcon={"cat"}
-                        href={"/meow"}
-                        variant={"tertiary"}
-                        size={"s"}
-                      />
-                    </Flex>
-                  </>
-                }
-              />
+                <Button
+                    fillWidth
+                    label={"Find avatar?"}
+                    prefixIcon={"search"}
+                    href={"https://lens.google.com/uploadbyurl?url=" + data?.avatarURL}
+                    variant={"tertiary"}
+                    size={"s"}
+                    target={"_blank"}
+                />
             </Flex>
           </Flex>
           <Flex className={styles.infoPosition}>
@@ -147,10 +128,24 @@ export default function Home() {
                   Just another JS/TS developer. Doing my own projects, writing libraries, writing
                   bots and trying to make websites.
                 </Text>
+                  <Text variant={"body-default-l"}>
+                        Currently focused on building <SmartLink href={'https://github.com/hitomihiumi/Amelia'}>Amelia</SmartLink> - an open-source multipurpose Discord bot.
+                  </Text>
               </Flex>
             </Flex>
           </Flex>
         </RevealFx>
+          <RevealFx trigger={Boolean(presence)} delay={0.6} translateY={1} horizontal={'center'}>
+              {presence && (
+                  <Carousel
+                      controls={false}
+                      items={presence.activities.map((activity, index) => {
+                          return { slide: <Presence data={activity} key={index} /> };
+                      })}
+                      fit
+                  ></Carousel>
+              )}
+          </RevealFx>
       </Flex>
     </Flex>
   );

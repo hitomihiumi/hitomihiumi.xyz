@@ -126,7 +126,7 @@ export const Presence: React.FC<PresenceProps> = ({ data }) => {
             position={"relative"}
             radius={"m"}
           />
-          {assets?.smallImage && (
+          {assets?.smallImage && getURL(assets.smallImage) && (
             <>
               <Media
                 src={getURL(assets.smallImage) || ""}

@@ -95,6 +95,7 @@ const GameCard = forwardRef<HTMLDivElement, GameCardProps>(
               radius={"m"}
               sizes={`${sizeMapping[size]}px`}
               className={`${styles.image}`}
+              pointerEvents={'none'}
             />
           </>
         );

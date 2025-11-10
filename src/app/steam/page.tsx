@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import { Flex, Text, Grid, RevealFx } from "@once-ui-system/core";
+import {Flex, Text, Grid, RevealFx, Accordion} from "@once-ui-system/core";
 import { GameCard, SteamProfile } from "@/components";
 import { ExtendedSteamGame, ExtendedSteamProfile } from "@/types/types";
 
@@ -33,32 +33,35 @@ export default function Page() {
       )}
 
       {games && games.length > 0 && (
-        <RevealFx delay={0.4} translateY={1} horizontal={"center"}>
-          <Flex
-            direction={"column"}
-            fit
-            padding={"16"}
-            gap={"16"}
-            horizontal={"center"}
-            background={"page"}
-            radius={"l"}
-            border={"neutral-alpha-medium"}
-            overflow={"hidden"}
-            m={{ maxWidth: "xs" }}
-          >
-            <Grid
-              columns={"4"}
-              gap={"16"}
-              s={{ columns: "2", gap: "8" }}
-              m={{ columns: "3", gap: "12" }}
-            >
-              {games.map((game, idx) => (
-                <Flex key={idx}>
-                  {game.library_capsule_2x && <GameCard key={game.appid} data={game} size={"xl"} />}
-                </Flex>
-              ))}
-            </Grid>
-          </Flex>
+        <RevealFx delay={0.4} translateY={1} horizontal={"center"} fit>
+          <Accordion title={'Recently Played Games'}>
+              <Flex
+                  direction={"column"}
+                  fit
+                  padding={"16"}
+                  gap={"16"}
+                  horizontal={"center"}
+                  background={"page"}
+                  radius={"l"}
+                  border={"neutral-alpha-medium"}
+                  overflow={"hidden"}
+                  m={{ maxWidth: "xs" }}
+              >
+                  <Text variant={"heading-strong-m"}>Recently Played Games</Text>
+                  <Grid
+                      columns={"4"}
+                      gap={"16"}
+                      s={{ columns: "2", gap: "8" }}
+                      m={{ columns: "3", gap: "12" }}
+                  >
+                      {games.map((game, idx) => (
+                          <Flex key={idx}>
+                              {game.library_capsule_2x && <GameCard key={game.appid} data={game} size={"xl"} />}
+                          </Flex>
+                      ))}
+                  </Grid>
+              </Flex>
+          </Accordion>
         </RevealFx>
       )}
     </Flex>

@@ -6,7 +6,7 @@ import { Flex, Grid, MasonryGrid, Media, RevealFx } from "@once-ui-system/core";
 
 export default function Page() {
   return (
-    <Flex fill direction={"column"} gap={"s"} horizontal={"center"} vertical={"center"}>
+    <Flex fill direction={"column"} gap={"s"} horizontal={"center"} vertical={"center"} padding={'xs'}>
       <RevealFx fill delay={0.2} translateY={0.5} horizontal={"center"}>
         <Flex
           direction={"column"}

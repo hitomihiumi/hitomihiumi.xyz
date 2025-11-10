@@ -89,6 +89,7 @@ const AvatarWFrame = forwardRef<HTMLDivElement, AvatarWFrameProps>(
               className={styles.image}
               //@ts-ignore
               aspectRatio={"1/1"}
+              pointerEvents={'none'}
               {...rest}
             />
             {frame && (
@@ -100,6 +101,7 @@ const AvatarWFrame = forwardRef<HTMLDivElement, AvatarWFrameProps>(
                 position={"absolute"}
                 className={styles.frame}
                 aspectRatio={"1/1"}
+                pointerEvents={'none'}
               />
             )}
           </>

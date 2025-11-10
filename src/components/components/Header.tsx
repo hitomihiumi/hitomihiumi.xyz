@@ -80,7 +80,7 @@ export const Header = () => {
                 <>
                   <Flex s={{ hide: true }}>
                     <ToggleButton
-                      prefixIcon="grid"
+                      prefixIcon="photo"
                       href="/gallery"
                       label={"Gallery"}
                       selected={pathname === "/gallery"}

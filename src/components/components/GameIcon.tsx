@@ -87,6 +87,7 @@ const GameIcon = forwardRef<HTMLDivElement, GameIconProps>(
               maxHeight={"160"}
               sizes={`${sizeMapping[size]}px`}
               className={styles.image}
+              pointerEvents={'none'}
             />
           </>
         );
