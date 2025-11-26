@@ -1,16 +1,19 @@
 "use client";
 
 import {
-    Heading,
-    Text,
-    Button,
-    Column,
-    Badge,
-    Logo,
-    Line,
-    LetterFx,
-    Flex,
-    RevealFx, Carousel, SmartLink, DropdownWrapper
+  Heading,
+  Text,
+  Button,
+  Column,
+  Badge,
+  Logo,
+  Line,
+  LetterFx,
+  Flex,
+  RevealFx,
+  Carousel,
+  SmartLink,
+  DropdownWrapper,
 } from "@once-ui-system/core";
 import React, { useEffect } from "react";
 import { Presence as IPresence, User } from "@/types/types";
@@ -21,7 +24,7 @@ import styles from "@/components/home/page.module.scss";
 export default function Home() {
   const [data, setData] = React.useState<User>();
   const [presence, setPresence] = React.useState<IPresence>();
-    const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   useEffect(() => {
     const cacheKey = "user-991777093312585808";
@@ -78,7 +81,7 @@ export default function Home() {
       horizontal={"center"}
       vertical={"center"}
     >
-      <Flex horizontal={"center"} direction={'column'} gap={'s'}>
+      <Flex horizontal={"center"} direction={"column"} gap={"s"}>
         <RevealFx delay={0.2} translateY={0.5} direction="row" s={{ direction: "column" }}>
           <Flex
             className={styles.avatarPosition}
@@ -98,15 +101,15 @@ export default function Home() {
               radius={"full"}
             />
             <Flex direction={"column"} horizontal={"center"}>
-                <Button
-                    fillWidth
-                    label={"Find avatar?"}
-                    prefixIcon={"search"}
-                    href={"https://lens.google.com/uploadbyurl?url=" + data?.avatarURL}
-                    variant={"tertiary"}
-                    size={"s"}
-                    target={"_blank"}
-                />
+              <Button
+                fillWidth
+                label={"Find avatar?"}
+                prefixIcon={"search"}
+                href={"https://lens.google.com/uploadbyurl?url=" + data?.avatarURL}
+                variant={"tertiary"}
+                size={"s"}
+                target={"_blank"}
+              />
             </Flex>
           </Flex>
           <Flex className={styles.infoPosition}>
@@ -128,24 +131,26 @@ export default function Home() {
                   Just another JS/TS developer. Doing my own projects, writing libraries, writing
                   bots and trying to make websites.
                 </Text>
-                  <Text variant={"body-default-l"}>
-                        Currently focused on building <SmartLink href={'https://github.com/hitomihiumi/Amelia'}>Amelia</SmartLink> - an open-source multipurpose Discord bot.
-                  </Text>
+                <Text variant={"body-default-l"}>
+                  Currently focused on building{" "}
+                  <SmartLink href={"https://github.com/hitomihiumi/Amelia"}>Amelia</SmartLink> - an
+                  open-source multipurpose Discord bot.
+                </Text>
               </Flex>
             </Flex>
           </Flex>
         </RevealFx>
-          <RevealFx trigger={Boolean(presence)} delay={0.6} translateY={1} horizontal={'center'}>
-              {presence && (
-                  <Carousel
-                      controls={false}
-                      items={presence.activities.map((activity, index) => {
-                          return { slide: <Presence data={activity} key={index} /> };
-                      })}
-                      fit
-                  ></Carousel>
-              )}
-          </RevealFx>
+        <RevealFx trigger={Boolean(presence)} delay={0.6} translateY={1} horizontal={"center"}>
+          {presence && (
+            <Carousel
+              controls={false}
+              items={presence.activities.map((activity, index) => {
+                return { slide: <Presence data={activity} key={index} /> };
+              })}
+              fit
+            ></Carousel>
+          )}
+        </RevealFx>
       </Flex>
     </Flex>
   );

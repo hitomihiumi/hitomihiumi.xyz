@@ -77,7 +77,7 @@ const SteamProfile = forwardRef<
                         radius={"full"}
                         alt={profileData.loccountrycode}
                         sizes={"20px"}
-                        pointerEvents={'none'}
+                        pointerEvents={"none"}
                       />
                       <Text variant={"body-strong-l"} className={styles.white}>
                         {profileData ? profileData.loccountrycode : ""}
