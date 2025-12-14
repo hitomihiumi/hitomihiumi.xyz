@@ -11,11 +11,11 @@
     "biome-write": "npx @biomejs/biome format --write ."
   },
   "dependencies": {
-    "@once-ui-system/core": "^1.5.2",
+    "@once-ui-system/core": "^1.5.8",
     "classnames": "^2.5.1",
-    "next": "15.4.7",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "next": "15.4.10",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-icons": "^5.2.1",
     "sass": "^1.93.3",
     "sharp": "^0.33.4"
