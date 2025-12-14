@@ -13,13 +13,13 @@ export default function Page() {
   const [profile, setProfile] = useState<ExtendedSteamProfile | null>(null);
 
   useEffect(() => {
-    fetch("https://api.hitomihiumi.xyz/v2/steam/user/76561198904028626/games/recently")
+    fetch("api/v2/steam/user/76561198904028626/games/recently")
       .then((data) => data.json())
       .then((data) => setGames(data.response.games));
   }, []);
 
   useEffect(() => {
-    fetch("https://api.hitomihiumi.xyz/v2/steam/user/76561198904028626").then((data) =>
+    fetch("api/v2/steam/user/76561198904028626").then((data) =>
       data.json().then((data) => setProfile(data.response.players[0])),
     );
   }, []);

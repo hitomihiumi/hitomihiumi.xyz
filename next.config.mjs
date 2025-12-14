@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
+  serverExternalPackages: ["discord.js", "zlib-sync", "bufferutil", "utf-8-validate"],
   sassOptions: {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.node$/,
+      loader: "node-loader",
+    });
+    return config;
   },
   images: {
     remotePatterns: [

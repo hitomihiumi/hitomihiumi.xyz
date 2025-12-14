@@ -24,7 +24,6 @@ import styles from "@/components/home/page.module.scss";
 export default function Home() {
   const [data, setData] = React.useState<User>();
   const [presence, setPresence] = React.useState<IPresence>();
-  const [isOpen, setIsOpen] = React.useState(false);
 
   useEffect(() => {
     const cacheKey = "user-991777093312585808";
@@ -39,7 +38,7 @@ export default function Home() {
       }
     }
 
-    fetch("https://api.hitomihiumi.xyz/v1/users/991777093312585808?content=withoutPresence")
+    fetch("api/v1/users/991777093312585808?content=withoutPresence")
       .then((res) => res.json() as Promise<User>)
       .then((res) => {
         let data = res;
@@ -62,7 +61,7 @@ export default function Home() {
       }
     }
 
-    fetch("https://api.hitomihiumi.xyz/v1/users/991777093312585808?content=presence")
+    fetch("api/v1/users/991777093312585808?content=presence")
       .then((res) => res.json() as Promise<IPresence>)
       .then((res) => {
         let data = res;
