@@ -128,6 +128,7 @@ const schema = {
 
 const routes = {
   "/": true,
+    "/amelia": true,
   "/gallery": true,
   "/steam": true,
 };

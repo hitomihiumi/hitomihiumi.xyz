@@ -168,10 +168,11 @@ export default function RootLayout({
           <WeatherFx
             position="absolute"
             fillHeight
-            type="leaves"
-            colors={["warning-solid-strong", "danger-solid-strong"]}
-            intensity={40}
-            speed={0.3}
+            type="snow"
+            data-solid="contrast"
+            colors={["brand-solid-strong", "neutral-solid-weak"]}
+            intensity={100}
+            speed={0.8}
             zIndex={0}
           />
           <Header />

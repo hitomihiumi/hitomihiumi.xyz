@@ -76,6 +76,25 @@ export const Header = () => {
                 <ToggleButton prefixIcon="person" href="/" selected={pathname === "/"} />
               )}
               <Line vert={true} height={2} background={"neutral-alpha-medium"} />
+                {routes["/amelia"] && (
+                    <>
+                        <Flex s={{ hide: true }}>
+                            <ToggleButton
+                                prefixIcon="discord"
+                                href="/amelia"
+                                label={"Amelia"}
+                                selected={pathname === "/amelia"}
+                            />
+                        </Flex>
+                        <Flex hide s={{ hide: false }}>
+                            <ToggleButton
+                                prefixIcon="discord"
+                                href="/amelia"
+                                selected={pathname === "/amelia"}
+                            />
+                        </Flex>
+                    </>
+                )}
               {routes["/gallery"] && (
                 <>
                   <Flex s={{ hide: true }}>

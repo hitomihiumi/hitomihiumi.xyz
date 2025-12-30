@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 
-import { Flex, Grid, MasonryGrid, Media, RevealFx } from "@once-ui-system/core";
+import {Carousel, Flex, Grid, MasonryGrid, Media, RevealFx} from "@once-ui-system/core";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -14,10 +15,9 @@ export default function Page() {
       vertical={"center"}
       padding={"xs"}
     >
-      <RevealFx fill delay={0.2} translateY={0.5} horizontal={"center"}>
+      <RevealFx fill delay={0.2} translateY={0.5} horizontal={"center"} vertical={'center'}>
         <Flex
           direction={"column"}
-          fill
           padding={"16"}
           gap={"16"}
           horizontal={"center"}
@@ -25,6 +25,7 @@ export default function Page() {
           radius={"l"}
           border={"neutral-alpha-medium"}
           maxWidth={"xl"}
+          fit
         >
           <MasonryGrid columns={4} m={{ columns: 3 }} s={{ columns: 2 }}>
             {[

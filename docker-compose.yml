@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    image: ghcr.io/hitomihiumi/hitomihiumi.xyz:master
+    container_name: hitomihiumi-xyz
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    # Alternatively, you can list variables directly here if you prefer not to use a file
+    # environment:
+    #   - TOKEN=your_token
+    #   - STEAM_API_KEY=your_key
+

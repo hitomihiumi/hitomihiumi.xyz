@@ -127,12 +127,12 @@ export default function Home() {
               </Flex>
               <Flex direction={"column"} gap={"s"} className={styles.about}>
                 <Text variant={"body-default-l"}>
-                  Just another JS/TS developer. Doing my own projects, writing libraries, writing
+                    &nbsp;&nbsp;&nbsp;Just another JS/TS developer. Doing my own projects, writing libraries, writing
                   bots and trying to make websites.
                 </Text>
                 <Text variant={"body-default-l"}>
-                  Currently focused on building{" "}
-                  <SmartLink href={"https://github.com/hitomihiumi/Amelia"}>Amelia</SmartLink> - an
+                    &nbsp;&nbsp;&nbsp;Currently focused on building{" "}
+                  <SmartLink href={"/amelia"}>Amelia</SmartLink> - an
                   open-source multipurpose Discord bot.
                 </Text>
               </Flex>
