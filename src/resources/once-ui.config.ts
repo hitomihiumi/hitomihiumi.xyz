@@ -110,7 +110,7 @@ const meta = {
     path: "/",
     title: "Hitomi Hiumi",
     description: "Just my website of another developer.",
-    image: "/images/og/hiumi.png",
+    image: "/images/og/hiumi.jpg",
     canonical: "https://hitomihiumi.xyz",
     robots: "index,follow",
     alternates: [{ href: "https://hitomihiumi.xyz", hrefLang: "en" }],
