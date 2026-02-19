@@ -1,4 +1,4 @@
-@import '@/styles/breakpoints';
+@use "../styles/breakpoints.scss" as breakpoints;
 
 .avatarPosition {
   position: sticky;
@@ -18,7 +18,7 @@
   position: relative;
 }
 
-@include s {
+@include breakpoints.s {
   .avatarPosition {
     top: auto;
     position: relative;

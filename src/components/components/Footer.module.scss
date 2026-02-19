@@ -1,6 +1,6 @@
-@import '@/styles/breakpoints';
+@use "../styles/breakpoints.scss" as breakpoints;
 
-@include s {
+@include breakpoints.s {
   .mobile {
     text-align: center;
     flex-direction: column;

@@ -1,11 +1,11 @@
-@import '@/styles/breakpoints';
+@use "../styles/breakpoints.scss" as breakpoints;
 
 .themeSwitcher {
     position: fixed;
     bottom: var(--static-space-32);
 }
 
-@include s {
+@include breakpoints.s {
     .themeSwitcher {
         position: fixed;
         top: var(--static-space-24);

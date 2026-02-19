@@ -1,4 +1,4 @@
-@import '@/styles/breakpoints';
+@use "../styles/breakpoints.scss" as breakpoints;
 
 .position {
   position: sticky;
@@ -13,7 +13,7 @@
   mask-size: 100% 100%;
 }
 
-@include s {
+@include breakpoints.s {
   .position {
     top: auto;
     position: fixed;

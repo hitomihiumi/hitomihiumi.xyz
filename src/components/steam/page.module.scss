@@ -1,4 +1,4 @@
-@import '@/styles/breakpoints';
+@use "../styles/breakpoints.scss" as breakpoints;
 
 .white {
   color: var(--static-white);
@@ -18,7 +18,7 @@
   max-width: var(--responsive-width-xs);
 }
 
-@include s {
+@include breakpoints.s {
   .baseColumn {
     position: relative;
   }
