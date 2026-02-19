@@ -11,13 +11,13 @@
     "biome-write": "npx @biomejs/biome format --write ."
   },
   "dependencies": {
-    "@once-ui-system/core": "^1.5.8",
+    "@once-ui-system/core": "^1.6.1",
     "axios": "^1.13.2",
     "bufferutil": "^4.0.9",
     "cheerio": "^1.1.2",
     "classnames": "^2.5.1",
     "discord.js": "^14.25.1",
-    "next": "15.4.10",
+    "next": "16.1.5",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.2.1",
