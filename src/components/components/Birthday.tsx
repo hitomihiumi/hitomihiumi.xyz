@@ -2,14 +2,25 @@ import React, {useEffect, useState} from "react";
 import { CountdownFx, Flex, IconButton, RevealFx, Text} from "@once-ui-system/core";
 
 export const Birthday = () => {
-    const [windowClosed, setWindowClosed] = useState(true);
+    const [windowClosed, setWindowClosed] = useState<string>("false");
     const targetDate = new Date(Date.UTC(new Date().getFullYear(), 2, 14)) // March 14, 2026 (months are 0-indexed)
 
     useEffect(() => {
+        if (windowClosed === "user") return;
+
+        const stored = localStorage.getItem("birthday-window-closed");
+        if (stored) {
+            const { timestamp } = JSON.parse(stored);
+            if (timestamp && Date.now() - timestamp < 12 * 60 * 60 * 1000) {
+                setWindowClosed("user");
+                return;
+            }
+        }
+
         if (targetDate.getTime() + 24 * 60 * 60 * 1000 < new Date().getTime()) {
-            setWindowClosed(true);
+            setWindowClosed("true");
         } else if (new Date().getTime() + 30 * 24 * 60 * 60 * 1000 > targetDate.getTime()) {
-            setWindowClosed(false);
+            setWindowClosed("false");
         }
     }, [targetDate]);
 
@@ -33,7 +44,7 @@ export const Birthday = () => {
                     paddingX={'12'}
                     paddingY={'4'}
                     radius={'l'}
-                    hide={windowClosed}
+                    hide={windowClosed === "true" || windowClosed === "user"}
                 >
                     <Flex
                         horizontal={"center"}
@@ -70,7 +81,7 @@ export const Birthday = () => {
                         icon={'close'}
                         variant={'ghost'}
                         size={'m'}
-                        onClick={() => setWindowClosed(true)}
+                        onClick={() => { setWindowClosed("user"); localStorage.setItem("birthday-window-closed", JSON.stringify({ timestamp: Date.now() })); }}
                     />
                 </Flex>
             </RevealFx>

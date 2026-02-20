@@ -47,14 +47,13 @@ export default function Page() {
               radius={"l"}
               border={"neutral-alpha-medium"}
               overflow={"hidden"}
-              m={{ maxWidth: "xs" }}
             >
               <Text variant={"heading-strong-m"}>Recently Played Games</Text>
               <Grid
                 columns={"4"}
                 gap={"16"}
-                s={{ columns: "2", gap: "8" }}
-                m={{ columns: "3", gap: "12" }}
+                s={{ columns: "2" }}
+                m={{ columns: "3" }}
               >
                 {games.map((game, idx) => (
                   <Flex key={idx}>
