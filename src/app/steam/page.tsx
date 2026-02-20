@@ -7,6 +7,7 @@ import { GameCard, SteamProfile } from "@/components";
 import { ExtendedSteamGame, ExtendedSteamProfile } from "@/types/types";
 
 import styles from "../../components/steam/page.module.scss";
+import {Birthday} from "@/components/components/Birthday";
 
 export default function Page() {
   const [games, setGames] = useState<ExtendedSteamGame[]>([]);
@@ -26,6 +27,7 @@ export default function Page() {
 
   return (
     <Flex fill direction={"column"} gap={"s"} horizontal={"center"} vertical={"center"}>
+      <Birthday/>
       {profile && (
         <RevealFx delay={0.2} translateY={0.5} horizontal={"center"}>
           <SteamProfile profileData={profile} className={styles.steamProfile} />

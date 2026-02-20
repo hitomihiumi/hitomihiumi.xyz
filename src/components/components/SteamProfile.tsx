@@ -53,6 +53,7 @@ const SteamProfile = forwardRef<
               size={"xl"}
               src={profileData ? profileData.avatarfull : ""}
               frame={profileData ? profileData.frame : ""}
+              radius={'xl'}
             />
             <Flex fillHeight gap="12" direction={"column"} horizontal={"start"}>
               <Flex direction={"column"}>

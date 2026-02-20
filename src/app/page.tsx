@@ -4,26 +4,22 @@ import {
   Heading,
   Text,
   Button,
-  Column,
-  Badge,
-  Logo,
-  Line,
-  LetterFx,
   Flex,
   RevealFx,
   Carousel,
   SmartLink,
-  DropdownWrapper,
 } from "@once-ui-system/core";
 import React, { useEffect } from "react";
 import { Presence as IPresence, User } from "@/types/types";
 import { AvatarWFrame, Presence } from "@/components";
 
 import styles from "@/components/home/page.module.scss";
+import { Birthday } from "@/components/components/Birthday";
 
 export default function Home() {
   const [data, setData] = React.useState<User>();
   const [presence, setPresence] = React.useState<IPresence>();
+
 
   useEffect(() => {
     const cacheKey = "user-991777093312585808";
@@ -80,6 +76,7 @@ export default function Home() {
       horizontal={"center"}
       vertical={"center"}
     >
+      <Birthday/>
       <Flex horizontal={"center"} direction={"column"} gap={"s"}>
         <RevealFx delay={0.2} translateY={0.5} direction="row" s={{ direction: "column" }}>
           <Flex
@@ -127,13 +124,11 @@ export default function Home() {
               </Flex>
               <Flex direction={"column"} gap={"s"} className={styles.about}>
                 <Text variant={"body-default-l"}>
-                    &nbsp;&nbsp;&nbsp;Just another JS/TS developer. Doing my own projects, writing libraries, writing
-                  bots and trying to make websites.
+                  &nbsp;&nbsp;&nbsp;Hi, my name is Hitomi Hiumi — that's my pseudonym. I am a student, developer, and animator. This is my small website. I write all kinds of libraries, such as <SmartLink href={'https://github.com/NMMTY/LazyCanvas/tree/main/packages/lazycanvas'} target={'_blank'}>LazyCanvas</SmartLink>. I write websites, mainly for myself. I write bots for Discord; you can see an example of one right now.
                 </Text>
                 <Text variant={"body-default-l"}>
-                    &nbsp;&nbsp;&nbsp;Currently focused on building{" "}
-                  <SmartLink href={"/amelia"}>Amelia</SmartLink> - an
-                  open-source multipurpose Discord bot.
+                    &nbsp;&nbsp;&nbsp;
+                  <SmartLink href={"/amelia"}>Amelia</SmartLink> - an open-source multipurpose Discord bot. Designed for creating and using various utilities and entertainment for users.
                 </Text>
               </Flex>
             </Flex>

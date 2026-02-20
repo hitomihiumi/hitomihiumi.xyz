@@ -36,9 +36,9 @@ const fonts = {
   code: code,
 };
 
-const style = {
+const style= {
   theme: "dark",
-  brand: "pink",
+  brand: "red",
   accent: "custom",
   neutral: "gray",
   border: "playful",
@@ -109,7 +109,7 @@ const meta = {
   home: {
     path: "/",
     title: "Hitomi Hiumi",
-    description: "Just my website of another developer.",
+    description: "Hi, my name is Hitomi Hiumi — that's my pseudonym. I am a student, developer, and animator. And this is my small website.",
     image: "/images/og/hiumi.jpg",
     canonical: "https://hitomihiumi.xyz",
     robots: "index,follow",

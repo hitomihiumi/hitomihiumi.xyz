@@ -20,6 +20,7 @@ import { Presence as IPresence, User } from "@/types/types";
 import { AvatarWFrame, Presence } from "@/components";
 
 import styles from "@/components/home/page.module.scss";
+import {Birthday} from "@/components/components/Birthday";
 
 export default function Home() {
     const [data, setData] = React.useState<User>();
@@ -57,6 +58,7 @@ export default function Home() {
             horizontal={"center"}
             vertical={"center"}
         >
+            <Birthday/>
             <Flex horizontal={"center"} direction={"column"} gap={"s"}>
                 <RevealFx delay={0.2} translateY={0.5} direction="row" s={{ direction: "column" }}>
                     <Flex
